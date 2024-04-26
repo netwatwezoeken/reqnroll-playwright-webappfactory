@@ -1,5 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration", "test\Integration\Integration.csproj", "{802C937E-4780-43F4-9BB4-058E1C4EE1D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{04DE4864-FA0C-4BAA-8386-269822341864}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{04FE3DE5-05B6-46B4-82BA-2C9EB2D0F5EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "src\BlazorApp\BlazorApp.csproj", "{217598CE-CDB0-41BA-A5A5-0059169BE7D6}"
@@ -10,12 +14,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{802C937E-4780-43F4-9BB4-058E1C4EE1D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802C937E-4780-43F4-9BB4-058E1C4EE1D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802C937E-4780-43F4-9BB4-058E1C4EE1D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802C937E-4780-43F4-9BB4-058E1C4EE1D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{217598CE-CDB0-41BA-A5A5-0059169BE7D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{217598CE-CDB0-41BA-A5A5-0059169BE7D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{217598CE-CDB0-41BA-A5A5-0059169BE7D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{217598CE-CDB0-41BA-A5A5-0059169BE7D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{802C937E-4780-43F4-9BB4-058E1C4EE1D8} = {04DE4864-FA0C-4BAA-8386-269822341864}
 		{217598CE-CDB0-41BA-A5A5-0059169BE7D6} = {04FE3DE5-05B6-46B4-82BA-2C9EB2D0F5EF}
 	EndGlobalSection
 EndGlobal
