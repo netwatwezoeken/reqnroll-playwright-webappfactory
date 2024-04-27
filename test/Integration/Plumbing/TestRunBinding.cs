@@ -37,10 +37,6 @@ public class TestRunBinding(ScenarioContext scenarioContext)
         var feature = featureContext.FeatureInfo.Title;
         var scenario = scenarioContext.ScenarioInfo.Title;
         var filename = $"{feature} - {scenario}";
-        // var filename = string.Join("_", scenarioContext.ScenarioInfo.Title.Split(Path.GetInvalidFileNameChars()))
-        //     .Replace("<", "_")
-        //     .Replace(">", "_")
-        //     .Replace("+", ".");
         var path = $"../../../traces/{filename}.zip";
         await Fixture.Context!.Tracing.StopAsync(new()
         {

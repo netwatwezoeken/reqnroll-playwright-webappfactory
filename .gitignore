@@ -20,4 +20,4 @@ out
 
 .idea
 **/.DS_Store
-test/Integration/traces
+traces
