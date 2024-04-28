@@ -1,8 +1,9 @@
+using Integration.Plumbing;
 using Microsoft.Playwright;
 using Reqnroll;
 using Xunit.Abstractions;
 
-namespace Integration.Plumbing;
+namespace Integration;
 
 [Binding]
 public class WeatherStepDefinition(ITestOutputHelper output) : BaseStepDefinition(output)
