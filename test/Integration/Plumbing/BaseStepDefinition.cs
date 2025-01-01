@@ -6,12 +6,13 @@ namespace Integration.Plumbing;
 public abstract class BaseStepDefinition
 {
     protected readonly ITestOutputHelper Output;
+    protected readonly IntegrationFixture Fixture;
     protected IPage Page;
 
     protected BaseStepDefinition(ITestOutputHelper output)
     {
-        var fixture = TestRunBinding.Fixture;
+        Fixture = TestRunBinding.Fixture;
         Output = output;
-        Page = fixture.Page!;
+        Page = Fixture.Page!;
     }
 }

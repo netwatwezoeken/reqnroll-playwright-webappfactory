@@ -9,14 +9,14 @@ namespace Integration;
 public class WeatherStepDefinition(ITestOutputHelper output) : BaseStepDefinition(output)
 {
     [Given(@"the weather page is visible")]
-    public async Task GivenTheCounterPageIsVisibleX()
+    public async Task GivenTheWeatherPageIsVisible()
     {
-        await Page.GotoAsync("https://localhost:7048/");
+        await Page.GotoAsync(Fixture.ServerAddress);
         await Page.GetByRole(AriaRole.Link, new PageGetByRoleOptions { Name = "Weather" }).ClickAsync();
     }
     
-    [Then(@"{int} locations are shown")]
-    public async Task ThenCounterIs(int counter)
+    [Then(@"(.*) locations are shown")]
+    public async Task ThenLocationsAreShown(int counter)
     {
         await Page.WaitForLoadStateAsync(LoadState.NetworkIdle);
         Assert.Equal(5,await Page.Locator("tr").CountAsync()-1);

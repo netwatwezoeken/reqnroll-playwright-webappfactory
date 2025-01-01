@@ -7,6 +7,8 @@ public class IntegrationFixture
 {
     private readonly CustomWebApplicationFactory _factory;
 
+    public string ServerAddress => _factory.ServerAddress;
+    
     public IPlaywright? Playwright;
     public IBrowser? Browser;
     public IBrowserContext? Context;
@@ -20,7 +22,7 @@ public class IntegrationFixture
         _factory = new CustomWebApplicationFactory();
                 
         HttpClient = _factory.CreateClient(
-            new WebApplicationFactoryClientOptions
+            new Nwwz.Mvc.Testing.WebApplicationFactoryClientOptions
             {
                 AllowAutoRedirect = false
             });
@@ -30,11 +32,8 @@ public class IntegrationFixture
     {
         Playwright = await Microsoft.Playwright.Playwright.CreateAsync();
         Browser = await Playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
-        {   
-            // See integration.json to permanently configure Headless on your local machine
-            // run git update-index --skip-worktree src/Main/integration.json so that
-            // a change to that file will not be automatically added to your commits
-            Headless = false, //_factory.Headless,
+        {
+            Headless = false,
             //SlowMo = 300
         });
         Context = await Browser.NewContextAsync(new BrowserNewContextOptions()

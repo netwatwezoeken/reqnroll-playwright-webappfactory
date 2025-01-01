@@ -8,10 +8,10 @@ namespace Integration;
 [Binding]
 public class CounterStepDefinition(ITestOutputHelper output) : BaseStepDefinition(output)
 {
-    [Given(@"the counter page is visible and counter is {int}")]
-    public async Task GivenTheCounterPageIsVisibleX(int counter)
+    [Given(@"the counter page is visible and counter is (.*)")]
+    public async Task GivenTheCounterPageIsVisibleAndCounterIs(int counter)
     {
-        await Page.GotoAsync("https://localhost:7048/");
+        await Page.GotoAsync(Fixture.ServerAddress);
         await Page.GetByRole(AriaRole.Link, new PageGetByRoleOptions { Name = "Counter" }).ClickAsync();
         await Page.WaitForLoadStateAsync(LoadState.NetworkIdle);
         var counterText = await Page.Locator("p").TextContentAsync();
@@ -25,7 +25,7 @@ public class CounterStepDefinition(ITestOutputHelper output) : BaseStepDefinitio
             new PageGetByRoleOptions { Name = "Click me" }).ClickAsync();
     }
 
-    [Then(@"counter is {int}")]
+    [Then(@"counter is (.*)")]
     public async Task ThenCounterIs(int counter)
     {
         var counterText = await Page.Locator("p").TextContentAsync();
